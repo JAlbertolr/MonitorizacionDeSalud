@@ -21,7 +21,7 @@ Guía de instalación
     2. Instalación:
 
         ◦ Haz doble clic sobre el .exe. 
-        ◦ Asegúrate de
+        ◦ Instala la aplicación a través del asistente de instalación
 
     3. Verificación:
 
