@@ -1,7 +1,7 @@
-
 package com.mycompany.monitorizaciondesalud;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 
 import javax.swing.UIManager;
@@ -9,14 +9,24 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 public class PantallaPrincipal extends javax.swing.JFrame {
 
-  
     public PantallaPrincipal() {
         initComponents();
-        JDialog dia=new JDialog();
-       
+        JDialog dia = new JDialog();
+        ImageIcon iconPasos = new ImageIcon(getClass().getResource("/images/pasosFail.png"));
+        labelPasos.setIcon(iconPasos);
+        ImageIcon iconKM = new ImageIcon(getClass().getResource("/images/km.png"));
+        labelKM.setIcon(iconKM);
+        ImageIcon iconCalorias = new ImageIcon(getClass().getResource("/images/calorias.png"));
+        labelCalorias.setIcon(iconCalorias);
+        ImageIcon iconPulso = new ImageIcon(getClass().getResource("/images/monitor-de-pulso-cardiaco.png"));
+        labelPulso.setIcon(iconPulso);
+        ImageIcon iconPeso = new ImageIcon(getClass().getResource("/images/peso.png"));
+        labelPeso.setIcon(iconPeso);
+        ImageIcon iconDescanso = new ImageIcon(getClass().getResource("/images/calidad-de-sueno.png"));
+        labelDescanso.setIcon(iconDescanso);
+
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -55,8 +65,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(600, 800));
-        setMinimumSize(new java.awt.Dimension(600, 800));
+        setLocation(new java.awt.Point(100, 0));
+        setMaximizedBounds(new java.awt.Rectangle(0, 0, 400, 600));
+        setMaximumSize(new java.awt.Dimension(400, 600));
+        setMinimumSize(new java.awt.Dimension(400, 600));
+        setSize(new java.awt.Dimension(400, 600));
         getContentPane().setLayout(new java.awt.GridLayout(9, 1, 5, 5));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -70,6 +83,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1);
 
+        jPanel8.setPreferredSize(new java.awt.Dimension(200, 62));
         jPanel8.setLayout(new java.awt.GridLayout(1, 3));
 
         jPanel10.setLayout(new java.awt.GridLayout(1, 0, 10, 10));
@@ -85,6 +99,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 15, 10, 15));
+        jPanel2.setPreferredSize(new java.awt.Dimension(200, 62));
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setMaximumSize(new java.awt.Dimension(55, 52));
@@ -107,6 +122,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 15, 10, 15));
+        jPanel3.setPreferredSize(new java.awt.Dimension(200, 62));
         jPanel3.setLayout(new java.awt.GridBagLayout());
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.weightx = 0.4;
@@ -125,6 +141,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jPanel3);
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 15, 10, 15));
+        jPanel4.setPreferredSize(new java.awt.Dimension(200, 62));
         jPanel4.setLayout(new java.awt.GridBagLayout());
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.weightx = 0.4;
@@ -133,7 +151,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         labelPulso.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         labelPulso.setForeground(new java.awt.Color(102, 102, 102));
-        labelPulso.setText("Pulso cardíaco: ");
+        labelPulso.setText("Pulso: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 0.6;
@@ -143,6 +161,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jPanel4);
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel5.setPreferredSize(new java.awt.Dimension(200, 62));
         jPanel5.setLayout(new java.awt.GridBagLayout());
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.weightx = 0.4;
@@ -161,6 +180,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jPanel5);
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel6.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 15, 10, 15));
+        jPanel6.setPreferredSize(new java.awt.Dimension(200, 62));
         jPanel6.setLayout(new java.awt.GridBagLayout());
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.weightx = 0.4;
@@ -179,6 +200,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jPanel6);
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel7.setPreferredSize(new java.awt.Dimension(200, 62));
         jPanel7.setLayout(new java.awt.GridBagLayout());
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.weightx = 0.4;
@@ -196,6 +218,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(jPanel7);
 
+        jPanel9.setPreferredSize(new java.awt.Dimension(300, 75));
         jPanel9.setLayout(new java.awt.GridLayout(3, 3));
         jPanel9.add(jLabel15);
         jPanel9.add(jLabel18);
@@ -221,33 +244,50 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-       //Calorias
-        int calorias=(int)(Math.random()*3000)+1;
-        labelCalorias.setText("Calorias: "+calorias);
-        //Kilometros
-        int kilometros=(int)(Math.random()*50)+1;
-        labelKM.setText("KM: "+kilometros);
-        //Descanso
-         int horas=(int)(Math.random()*7)+1;
-         int minutos=(int)(Math.random()*59)+1;
-        labelDescanso.setText("Descanso: "+horas+":"+minutos);
-        //Pulso
-         int pulso=(int)(Math.random()*140)+40;
-        labelPulso.setText("Pulso: "+pulso);
-        //Distancia (metros)
-         int pasos=(int)(Math.random()*100000)+1;
-        labelPasos.setText("Pasos: "+pasos);
+
+        ImageIcon icon;
+        //Calorias
+        int calorias = (int) (Math.random() * 3000) + 1;
+        labelCalorias.setText("Calorias: " + calorias);
         //Peso
-        int peso=(int)(Math.random()*70)+40;
-        labelPeso.setText("Peso: "+peso);
+        int peso = (int) (Math.random() * 70) + 40;
+        labelPeso.setText("Peso: " + peso);
+        //Kilometros
+        int kilometros = (int) (Math.random() * 20) + 1;
+        labelKM.setText("KM: " + kilometros);
+        //Descanso
+        int horas = (int) (Math.random() * 7) + 1;
+        int minutos = (int) (Math.random() * 59) + 1;
+        labelDescanso.setText("Descanso: " + horas + ":" + minutos);
+        //Pulso
+        int pulso = (int) (Math.random() * 140) + 40;
+        labelPulso.setText("Pulso: " + pulso);
+        if (pulso > 120) {
+            icon = new ImageIcon(getClass().getResource("/images/pulsoAlto.png"));
+            labelPulso.setIcon(icon);
+
+        } else if (pulso < 80) {
+            icon = new ImageIcon(getClass().getResource("/images/pulsoBajo (1).png"));
+            labelPulso.setIcon(icon);
+        } else {
+            icon = new ImageIcon(getClass().getResource("/images/pulsoMedio.png"));
+            labelPulso.setIcon(icon);
+        }
+        //Distancia (metros)
+        int pasos = (int) (Math.random() * 50000) + 1;
+        labelPasos.setText("Pasos: " + pasos);
+        if (pasos > 20000) {
+            icon = new ImageIcon(getClass().getResource("/images/pasosPass.png"));
+            labelPasos.setIcon(icon);
+        } else {
+            icon = new ImageIcon(getClass().getResource("/images/pasosFail.png"));
+            labelPasos.setIcon(icon);
+        }
         
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_btnActualizarActionPerformed
 
-    
     public static void main(String args[]) throws UnsupportedLookAndFeelException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -271,7 +311,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(PantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-         UIManager.setLookAndFeel(new FlatDarkLaf());
+        UIManager.setLookAndFeel(new FlatDarkLaf());
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
