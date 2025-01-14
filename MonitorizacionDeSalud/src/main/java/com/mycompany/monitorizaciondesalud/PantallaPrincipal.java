@@ -2,14 +2,18 @@
 package com.mycompany.monitorizaciondesalud;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import javax.swing.JDialog;
+
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 public class PantallaPrincipal extends javax.swing.JFrame {
 
-   
+  
     public PantallaPrincipal() {
         initComponents();
+        JDialog dia=new JDialog();
+       
     }
 
     
@@ -21,27 +25,26 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         nombreAPP = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         nombreUsuario = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        labelPeso = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        labelKM = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        labelPulso = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        labelPasos = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        labelCalorias = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        labelDescanso = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -50,7 +53,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btnActualizar = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(600, 800));
@@ -70,28 +72,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jPanel8.setLayout(new java.awt.GridLayout(1, 3));
 
-        jLabel19.setText("jLabel19");
-        jPanel8.add(jLabel19);
+        jPanel10.setLayout(new java.awt.GridLayout(1, 0, 10, 10));
 
         nombreUsuario.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         nombreUsuario.setText("Usuario: ");
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(nombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(nombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        nombreUsuario.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        jPanel10.add(nombreUsuario);
 
         jPanel8.add(jPanel10);
 
@@ -101,7 +87,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 15, 10, 15));
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/pulsoBajo (1).png"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(55, 52));
         jLabel1.setMinimumSize(new java.awt.Dimension(55, 52));
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -109,103 +94,105 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanel2.add(jLabel1, gridBagConstraints);
 
-        jLabel2.setText("jLabel2");
+        labelPeso.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        labelPeso.setForeground(new java.awt.Color(102, 102, 102));
+        labelPeso.setText("Peso: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 0.8;
         gridBagConstraints.weighty = 1.0;
-        jPanel2.add(jLabel2, gridBagConstraints);
+        jPanel2.add(labelPeso, gridBagConstraints);
 
         getContentPane().add(jPanel2);
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 15, 10, 15));
         jPanel3.setLayout(new java.awt.GridBagLayout());
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/pasosFail.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.weightx = 0.4;
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(jLabel3, gridBagConstraints);
 
-        jLabel4.setText("jLabel4");
+        labelKM.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        labelKM.setForeground(new java.awt.Color(102, 102, 102));
+        labelKM.setText("KM: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 0.8;
         gridBagConstraints.weighty = 1.0;
-        jPanel3.add(jLabel4, gridBagConstraints);
+        jPanel3.add(labelKM, gridBagConstraints);
 
         getContentPane().add(jPanel3);
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
         jPanel4.setLayout(new java.awt.GridBagLayout());
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/peso.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.weightx = 0.4;
         gridBagConstraints.weighty = 1.0;
         jPanel4.add(jLabel5, gridBagConstraints);
 
-        jLabel6.setText("jLabel6");
+        labelPulso.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        labelPulso.setForeground(new java.awt.Color(102, 102, 102));
+        labelPulso.setText("Pulso cardíaco: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 0.6;
         gridBagConstraints.weighty = 1.0;
-        jPanel4.add(jLabel6, gridBagConstraints);
+        jPanel4.add(labelPulso, gridBagConstraints);
 
         getContentPane().add(jPanel4);
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 204));
         jPanel5.setLayout(new java.awt.GridBagLayout());
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/calidad-de-sueno.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.weightx = 0.4;
         gridBagConstraints.weighty = 1.0;
         jPanel5.add(jLabel7, gridBagConstraints);
 
-        jLabel8.setText("jLabel8");
+        labelPasos.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        labelPasos.setForeground(new java.awt.Color(102, 102, 102));
+        labelPasos.setText("Pasos: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 0.6;
         gridBagConstraints.weighty = 1.0;
-        jPanel5.add(jLabel8, gridBagConstraints);
+        jPanel5.add(labelPasos, gridBagConstraints);
 
         getContentPane().add(jPanel5);
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
         jPanel6.setLayout(new java.awt.GridBagLayout());
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/calorias.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.weightx = 0.4;
         gridBagConstraints.weighty = 1.0;
         jPanel6.add(jLabel9, gridBagConstraints);
 
-        jLabel10.setText("jLabel10");
+        labelCalorias.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        labelCalorias.setForeground(new java.awt.Color(102, 102, 102));
+        labelCalorias.setText("Calorias: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 0.6;
         gridBagConstraints.weighty = 1.0;
-        jPanel6.add(jLabel10, gridBagConstraints);
+        jPanel6.add(labelCalorias, gridBagConstraints);
 
         getContentPane().add(jPanel6);
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 204));
         jPanel7.setLayout(new java.awt.GridBagLayout());
-
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/km.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.weightx = 0.4;
         gridBagConstraints.weighty = 1.0;
         jPanel7.add(jLabel11, gridBagConstraints);
 
-        jLabel12.setText("jLabel12");
+        labelDescanso.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        labelDescanso.setForeground(new java.awt.Color(102, 102, 102));
+        labelDescanso.setText("Descanso: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 0.6;
         gridBagConstraints.weighty = 1.0;
-        jPanel7.add(jLabel12, gridBagConstraints);
+        jPanel7.add(labelDescanso, gridBagConstraints);
 
         getContentPane().add(jPanel7);
 
@@ -230,14 +217,34 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(jPanel9);
 
-        jLabel20.setText("jLabel20");
-        getContentPane().add(jLabel20);
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        // TODO add your handling code here:
+       //Calorias
+        int calorias=(int)(Math.random()*3000)+1;
+        labelCalorias.setText("Calorias: "+calorias);
+        //Kilometros
+        int kilometros=(int)(Math.random()*50)+1;
+        labelKM.setText("KM: "+kilometros);
+        //Descanso
+         int horas=(int)(Math.random()*7)+1;
+         int minutos=(int)(Math.random()*59)+1;
+        labelDescanso.setText("Descanso: "+horas+":"+minutos);
+        //Pulso
+         int pulso=(int)(Math.random()*140)+40;
+        labelPulso.setText("Pulso: "+pulso);
+        //Distancia (metros)
+         int pasos=(int)(Math.random()*100000)+1;
+        labelPasos.setText("Pasos: "+pasos);
+        //Peso
+        int peso=(int)(Math.random()*70)+40;
+        labelPeso.setText("Peso: "+peso);
+        
+        
+        
+        
+        
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     
@@ -277,24 +284,16 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -306,6 +305,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel labelCalorias;
+    private javax.swing.JLabel labelDescanso;
+    private javax.swing.JLabel labelKM;
+    private javax.swing.JLabel labelPasos;
+    private javax.swing.JLabel labelPeso;
+    private javax.swing.JLabel labelPulso;
     private javax.swing.JLabel nombreAPP;
     private javax.swing.JLabel nombreUsuario;
     // End of variables declaration//GEN-END:variables
