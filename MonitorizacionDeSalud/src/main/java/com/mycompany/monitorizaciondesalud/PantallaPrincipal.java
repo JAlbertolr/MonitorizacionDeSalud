@@ -3,18 +3,22 @@ package com.mycompany.monitorizaciondesalud;
 import com.formdev.flatlaf.FlatDarkLaf;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.BorderFactory;
 
 public class PantallaPrincipal extends javax.swing.JFrame {
 
     public PantallaPrincipal() {
         initComponents();
-        // Crear el JFrame principal
-        JFrame frame = new JFrame("Aplicación Principal");
+        configurarInteracciones();
+        // Crear el JFrame principal para pedir el nombre
+        JFrame frame = new JFrame("Monitorización de Salud");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 300);
+        frame.setSize(500, 400);
         frame.setLocationRelativeTo(null); // Centra la ventana
 
         // Mostrar el JDialog al inicio
@@ -23,7 +27,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         // Obtener el nombre ingresado
         String nombreUsu = dialog.getNombre(); // Variable para almacenar el nombre del usuario
-        nombreUsuario.setText("Usuario: "+nombreUsu);
+        nombreUsuario.setText("Usuario: " + nombreUsu);
+        //Centrar aplicación
+        this.setLocationRelativeTo(null);
+
+        //Insertar imágenes en los Jlabel
         ImageIcon iconPasos = new ImageIcon(getClass().getResource("/images/pasosFail.png"));
         iPasos.setIcon(iconPasos);
         ImageIcon iconKM = new ImageIcon(getClass().getResource("/images/km.png"));
@@ -36,7 +44,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         iPeso.setIcon(iconPeso);
         ImageIcon iconDescanso = new ImageIcon(getClass().getResource("/images/calidad-de-sueno.png"));
         iDescanso.setIcon(iconDescanso);
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -84,13 +92,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(400, 600));
         getContentPane().setLayout(new java.awt.GridLayout(9, 1, 5, 5));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        jPanel1.setLayout(new java.awt.GridLayout());
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
-        nombreAPP.setFont(new java.awt.Font("Dialog", 3, 48)); // NOI18N
-        nombreAPP.setForeground(new java.awt.Color(204, 204, 204));
+        nombreAPP.setFont(new java.awt.Font("Dialog", 3, 26)); // NOI18N
+        nombreAPP.setForeground(new java.awt.Color(102, 102, 255));
         nombreAPP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        nombreAPP.setText("Monitoreo");
+        nombreAPP.setText("MONITORIZACIÓN DE SALUD");
         jPanel1.add(nombreAPP);
 
         getContentPane().add(jPanel1);
@@ -258,32 +265,34 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
 
         ImageIcon icon;
-        //Calorias
-        int calorias = (int) (Math.random() * 3000) + 1;
-        labelCalorias.setText("Calorias: " + calorias);
-        //Peso
-        int peso = (int) (Math.random() * 70) + 40;
+        // Calorías
+        int calorias = generarAleatorio(1, 3000);
+        labelCalorias.setText("Calorías: " + calorias);
+
+        // Peso
+        int peso = generarAleatorio(40, 70);
         labelPeso.setText("Peso: " + peso);
-        //Kilometros
-        int kilometros = (int) (Math.random() * 20) + 1;
+
+        // Kilómetros
+        int kilometros = generarAleatorio(1, 20);
         labelKM.setText("KM: " + kilometros);
-        
+
         //Descanso
-        int horas = (int) (Math.random() * 7) + 1;
-        int minutos = (int) (Math.random() * 59) + 1;
+        int horas = generarAleatorio(0, 10);
+        int minutos = generarAleatorio(0, 60);
         labelDescanso.setText("Descanso: " + horas + ":" + minutos);
-        if(horas<3){
-             icon = new ImageIcon(getClass().getResource("/images/expectativa.png"));
+        if (horas < 3) {
+            icon = new ImageIcon(getClass().getResource("/images/expectativa.png"));
             iDescanso.setIcon(icon);
-        }else if(horas>5){
+        } else if (horas > 5) {
             icon = new ImageIcon(getClass().getResource("/images/suenos.png"));
             iDescanso.setIcon(icon);
-        }else{
+        } else {
             icon = new ImageIcon(getClass().getResource("/images/calidad-de-sueno.png"));
             iDescanso.setIcon(icon);
         }
         //Pulso
-        int pulso = (int) (Math.random() * 140) + 40;
+        int pulso = generarAleatorio(40, 200);
         labelPulso.setText("Pulso: " + pulso);
         if (pulso > 120) {
             icon = new ImageIcon(getClass().getResource("/images/pulsoAlto.png"));
@@ -297,7 +306,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             iPulso.setIcon(icon);
         }
         //Distancia (metros)
-        int pasos = (int) (Math.random() * 50000) + 1;
+        int pasos = generarAleatorio(1, 50000);
         labelPasos.setText("Pasos: " + pasos);
         if (pasos > 20000) {
             icon = new ImageIcon(getClass().getResource("/images/pasosPass.png"));
@@ -306,7 +315,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             icon = new ImageIcon(getClass().getResource("/images/pasosFail.png"));
             iPasos.setIcon(icon);
         }
-        
 
 
     }//GEN-LAST:event_btnActualizarActionPerformed
@@ -342,6 +350,42 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 new PantallaPrincipal().setVisible(true);
             }
         });
+    }
+
+    //Añadir hover
+    private void configurarInteracciones() {
+        // Agregar comportamiento a cada JPanel
+        configurarPanelHover(jPanel2);
+        configurarPanelHover(jPanel3);
+        configurarPanelHover(jPanel4);
+        configurarPanelHover(jPanel5);
+        configurarPanelHover(jPanel6);
+        configurarPanelHover(jPanel7);
+    }
+
+    private void configurarPanelHover(javax.swing.JPanel panel) {
+        panel.addMouseListener(new MouseAdapter() {
+            Color colorOriginal = panel.getBackground();
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                // Cambiar color y simular reducción de tamaño
+                panel.setBackground(colorOriginal.darker());
+                panel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                // Restaurar color y tamaño original
+                panel.setBackground(colorOriginal);
+                panel.setBorder(BorderFactory.createEmptyBorder());
+            }
+        });
+    }
+
+    //Método que genera un numero entre un rango de valores(min y max incluidos)
+    public int generarAleatorio(int min, int max) {
+        return (int) (Math.random() * (max - min + 1)) + min;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

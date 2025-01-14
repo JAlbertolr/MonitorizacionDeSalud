@@ -16,7 +16,7 @@ public class NombreDialog extends JDialog {
     private void initComponents() {
         JLabel lblNombre = new JLabel("Ingrese su nombre:");
         txtNombre = new JTextField(20);
-        btnAceptar = new JButton("Aceptar");
+        btnAceptar = new JButton("Iniciar");
 
         btnAceptar.addActionListener(evt -> btnAceptarActionPerformed());
 
